@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Safe Demo Site — Validation & User-Initiated Redirect</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Demo: Improved Validation & User-Initiated Redirect</h1>
+
+    <section id="form-section" class="panel">
+      <h2>Sign up (validated)</h2>
+      <form id="demoForm" novalidate>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required placeholder="you@example.com" aria-describedby="emailHelp" />
+        <div id="emailError" class="error" aria-live="polite"></div>
+        <div id="emailHelp" class="muted">We validate basic structure of the email address. No data is sent in this demo.</div>
+
+        <label for="phone">Phone (optional)</label>
+        <input id="phone" name="phone" type="tel" placeholder="+1-555-555-5555" aria-describedby="phoneHelp" />
+        <div id="phoneError" class="error" aria-live="polite"></div>
+        <div id="phoneHelp" class="muted">Accepts digits, spaces, parentheses, dashes and optional leading +.</div>
+
+        <label for="name">Full name</label>
+        <input id="name" name="name" type="text" required placeholder="Jane Doe" minlength="2" maxlength="100" />
+
+        <button type="submit">Submit</button>
+      </form>
+      <div id="formMsg" class="info" role="status" aria-live="polite"></div>
+    </section>
+
+    <section id="redirect-section" class="panel">
+      <h2>Open external link (requires user action)</h2>
+      <p>This opens the external site only after you click and confirm.</p>
+      <button id="openExternalBtn">Open external site</button>
+    </section>
+
+    <section id="tour-section" class="panel">
+      <h2>Guided scroll demo (user-initiated)</h2>
+      <p>Click "Start Tour" to try a user-triggered smooth scroll through the page. The tour is started only after you click the button — no background automation.</p>
+      <button id="startTourBtn">Start Tour</button>
+    </section>
+
+    <section id="end" class="panel">
+      <h2>End</h2>
+      <p>Thanks for trying the demo.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
